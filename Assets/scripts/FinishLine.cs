@@ -11,7 +11,9 @@ public class FinishLine : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            FindObjectOfType<PlayerController>().DisableControls();
             finishEffect.Play();
+            GetComponent<AudioSource>().Play();
             Invoke("ReloadScene", pause);
         }
     }
